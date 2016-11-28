@@ -1,0 +1,25 @@
+<h2 class="page-header">Добавление слова</h2>
+{{#if errors}}
+	{{#each errors}}
+		<div class="alert alert-danger">{{msg}}</div>
+	{{/each}}
+{{/if}}
+<form method="post" action="/wit/addword">
+	<div class="form-group">
+		<label>Слово</label>
+		<input type="text" class="form-control" placeholder="word" name="word">
+	</div>
+	<div class="form-group">
+		<label>Происхождение (необязательно)</label>
+		<input type="text" class="form-control" placeholder="origin" name="origin">
+	</div>
+	 <div class="form-group">
+  		<label for="comment">Определение слова:</label>
+  		<textarea class="form-control" rows="5" name="description"></textarea>
+	</div>
+	<!--<div class="form-group">			// нужно сделать выбор из списка + добавление новой категории		
+		<label>Категория</label>
+		<input type="text" class="form-control" placeholder="Категория" name="category">
+	</div> -->
+	<button type="submit" class="btn btn-default">Добавить</button>
+</form>

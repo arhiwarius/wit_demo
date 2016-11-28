@@ -13,6 +13,8 @@
             {{#if user}}
               <li role="presentation" style="padding: 10px 15px;">Hello, <b>{{user.username}}</b>!</li>
               <li role="presentation"><a href="/">Главная</a></li>
+              <li role="presentation"><a href="/wit/random">Случайное слово</a></li>
+              <li role="presentation"><a href="/wit/addword">Добавить слово</a></li>
               <li role="presentation"><a href="/users/logout">Logout</a></li>
             {{else}}
               <li role="presentation"><a href="/users/login">Login</a></li>
