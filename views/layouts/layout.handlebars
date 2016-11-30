@@ -12,7 +12,6 @@
           <ul class="nav nav-pills pull-right">
             {{#if user}}
               <li role="presentation" style="padding: 10px 15px;">Hello, <b>{{user.username}}</b>!</li>
-              <li role="presentation"><a href="/">Главная</a></li>
               <li role="presentation"><a href="/wit/random">Случайное слово</a></li>
               <li role="presentation"><a href="/wit/addword">Добавить слово</a></li>
               <li role="presentation"><a href="/users/logout">Logout</a></li>
@@ -22,7 +21,7 @@
             {{/if}}
           </ul>
         </nav>
-        <h3 class="text-muted">WordInTerms</h3>
+        <a href="/" style="text-decoration: none"><h3 class="text-muted">Word In Terms</h3></a>
       </div>
 
       <div class="row">

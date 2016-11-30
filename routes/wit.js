@@ -1,17 +1,44 @@
 var express = require('express');
 var router = express.Router();
 var Word = require('../models/addword');
+//var Test = require('../models/addword');
 
 
 router.get('/wit', function(req, res){
 	res.render('wit');
 });
 
+function ObjLen( object ) {
+    return Object.keys(object).length;
+};
+
 router.get('/random', function(req, res){
-	Word.getAllWords();
-	console.log(Word);
-	res.render('random');
+	//Word.getAllWords();
+	//console.log(Word);
+	//res.render('random', {Word});
+
+	Word.find()
+		.then(function(doc) {
+			var rNum = Math.floor(Math.random() * ObjLen(doc));
+			
+			res.render('random', {word:doc[rNum].word, origin:doc[rNum].origin, desc:doc[rNum].description});
+			console.log(rNum);
+		})
 });
+/*
+		RandomSchema.statics.random = function(callback) {
+		 	 this.count(function(err, count) {
+		 	   if (err) {
+		 	     return callback(err);
+		  	  }
+		  	  var rand = Math.floor(Math.random() * count);
+		  	  this.findOne().skip(rand).exec(callback);
+		 	 }.bind(this));
+		};
+*/
+
+
+
 
 router.get('/addword', function(req, res){
 	res.render('addword');

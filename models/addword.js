@@ -21,7 +21,31 @@ var WordSchema = mongoose.Schema({
 	}
 });
 
-// Random Word Schema - for testing mongoose-simple-random 
+
+// this works fine
+var Word = module.exports = mongoose.model('Word', WordSchema);
+
+module.exports.createWord = function(newWord, callback){
+	newWord.save(callback);
+};
+
+module.exports.getAllWords = function(){
+	Word.find();
+};
+ 
+/*
+// this doesnt work at all
+module.exports.getRandomWord = function(cb){
+	Test.findOneRandom(function(err, result){
+
+	});	
+
+	return Test;
+};
+
+
+/*
+//Random Word Schema - for testing mongoose-simple-random 
 var RwSchema = mongoose.Schema({
 	word: {
 		type: String,
@@ -44,22 +68,15 @@ Test = mongoose.model('Test', RwSchema);
 		console.log(result); // 1 elem
 	}
 });
-*/
-
-
-// this works fine
-var Word = module.exports = mongoose.model('Word', WordSchema);
-
-module.exports.createWord = function(newWord, callback){
-	newWord.save(callback);
-};
-
+**
 
 // this doesnt work at all
 module.exports.getRandomWord = function(cb){
 	Test.findOneRandom(function(err, result){
 
 	});	
+
+	return Test;
 };
 
 
