@@ -2,6 +2,7 @@
 
 This is a dev version of app, more soon
 
+You can try this app in 188.166.0.71:51208
 
 thanks to Brad Traversy and his  Loginapp
 
